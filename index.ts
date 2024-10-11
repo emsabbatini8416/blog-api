@@ -1,13 +1,13 @@
 import express, { Express } from "express";
-import { Server, createServer } from 'http';
+import { Server, createServer } from "http";
 import mongoose from "mongoose";
-import { bootstrap } from "./src/loader";
+import { bootstrap } from "./src";
 import { logger } from "./src/config/logger";
 
 const exitHandler = (server: Server | null) => {
   if (server) {
     server.close(async () => {
-      logger.info('Server closed');
+      logger.info("Server closed");
       process.exit(1);
     });
   } else {
@@ -27,16 +27,16 @@ const startServer = async () => {
   await bootstrap(app);
 
   const httpServer = createServer(app);
-  const port = process.env.PORT
+  const port = process.env.PORT;
 
   const server: Server = httpServer.listen(port, () => {
     logger.info(`server listening on port ${port}`);
   });
 
-  process.on('uncaughtException', unExpectedErrorHandler(server));
-  process.on('unhandledRejection', unExpectedErrorHandler(server));
-  process.on('SIGTERM', () => {
-    logger.info('SIGTERM recieved');
+  process.on("uncaughtException", unExpectedErrorHandler(server));
+  process.on("unhandledRejection", unExpectedErrorHandler(server));
+  process.on("SIGTERM", () => {
+    logger.info("SIGTERM recieved");
     if (server) {
       server.close();
     }

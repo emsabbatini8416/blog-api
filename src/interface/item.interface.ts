@@ -1,8 +1,6 @@
-import { Document } from 'mongoose';
+import { Document } from "mongoose";
 
 export interface IItem extends Document {
   name: string;
   description: string;
-  quantity: number;
-  purchased: boolean;
 }
