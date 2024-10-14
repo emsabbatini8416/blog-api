@@ -14,7 +14,7 @@ export const getAll = async (
   try {
     const docs = await Survivor.find();
 
-    res.status(200).json({ items: docs, success: true });
+    res.status(200).json({ data: { items: docs }, success: true });
   } catch (error) {
     if (!(error instanceof CustomAPIError)) {
       next(
