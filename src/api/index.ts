@@ -1,13 +1,9 @@
 import express from "express";
 const router = express.Router();
 
-import survivorRoutes from "./survivor";
-import itemRoutes from "./item";
-import reportRoutes from "./report";
+import postRoutes from "./post";
 
-router.use("/survivor", survivorRoutes);
-router.use("/item", itemRoutes);
-router.use("/report", reportRoutes);
+router.use("/posts", postRoutes);
 
 router.get("/", (req, res) => {
   res.json({

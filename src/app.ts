@@ -6,7 +6,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import api from "./api";
-import { errorHandlerMiddleware, notFoundMiddleware } from "./middleware";
+import { notFoundMiddleware } from "./middleware";
 import ExpressMongoSanitize from "express-mongo-sanitize";
 
 config();
@@ -35,5 +35,4 @@ export const bootstrapExpress = (app: any) => {
   app.use("/api/", api);
 
   app.use(notFoundMiddleware);
-  app.use(errorHandlerMiddleware);
 };

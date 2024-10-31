@@ -4,10 +4,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/emsabbatini8416/shopping-list-api
+$ git clone https://github.com/emsabbatini8416/blog-api
 
 # Go into the repository
-$ cd shopping-list-api
+$ cd blog-api
 
 # Install dependencies
 $ npm install

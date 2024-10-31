@@ -1,5 +1,5 @@
 {
-  "name": "survivor-api",
+  "name": "blog-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,7 @@
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier:fix": "npx prettier . --write",
-    "seed": "ts-node src/seeder/items-seed.ts"
+    "prettier:fix": "npx prettier . --write"
   },
   "author": "Emmanuel Sabbatini",
   "license": "ISC",
