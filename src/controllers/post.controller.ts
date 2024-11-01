@@ -65,7 +65,7 @@ export const getPosts = async (req: Request, res: Response) => {
     res.status(200).json({
       totalPosts: postsWithCommentsCount[0].totalCount[0]?.count,
       totalPages: Math.ceil(
-        postsWithCommentsCount[0].totalCount[0]?.count || 0 / limit,
+        (postsWithCommentsCount[0].totalCount[0]?.count || 0) / limit,
       ),
       currentPage: page,
       posts: postsWithCommentsCount[0].posts,
